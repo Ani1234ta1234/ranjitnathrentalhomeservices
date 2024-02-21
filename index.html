@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E BILL CALCULATOR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        small {
+            font-size: 100%;
+            position: relative;
+            top: -28px;
+        }
+
+        #heading {
+            animation-name: heading;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            color: green;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        @keyframes heading {
+            0% {
+                color: red;
+            }
+
+            25% {
+                color: green;
+            }
+
+            50% {
+                color: blue;
+            }
+
+            75% {
+                color: white;
+            }
+
+            100% {
+                color: green;
+            }
+        }
+
+        #h {
+            height: 5px;
+            background-color: green;
+        }
+
+        #box {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 5px solid #4CAF50;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        b {
+            color: green;
+        }
+
+        #ebill {
+            background-color: #4CAF50;
+            color: white;
+            outline: none;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #fset {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #abi {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #bi {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #bs {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #yt {
+            font-size: 8px;
+        }
+
+        #tde {
+            font-size: 20%;
+        }
+
+        #tdi {
+            font-size: 50%;
+        }
+        #fset{display:none;}
+    </style>
+    <script>
+        function sunits(){var a=Number(document.getElementById("sunits").value);var b=Number(document.getElementById("munits").value);var c=document.getElementById("td");c.innerHTML=a;var d=document.getElementById("tdd");d.innerHTML="Not calculated from submeter";var e=document.getElementById("tddd");e.innerHTML=a;var f=document.getElementById("mu");var g=b-368;var h=g+1.5;var i=h/4;f.innerHTML=i;var j=document.getElementById("na");j.innerHTML="Not calculated from submeter";var n=document.getElementById("ds");n.innerHTML=i;var w=document.getElementById("lm");w.innerHTML="Not calculated from submeter";var v=document.getElementById("ctu");v.innerHTML=a+i;var vv=document.getElementById("amt");var cc=a+i;vv.innerHTML="Rs"+" "+(cc*7.61+15);var dd=document.getElementById("dd");dd.innerHTML="On or before 5th of every month";var ee=document.getElementById("rs");ee.innerHTML="Rs"+" "+(cc*7.61+15);var ff=document.getElementById("box");ff.style.display="none";var gg=document.getElementById("fset");gg.style.display="block";var rm=document.getElementById("rm");rm.innerHTML=15;
+        }
+        function e(){var a=document.getElementById("fset");a.style.display="none";var b=document.getElementById("box");b.style.display="block";}
+        </script>
+</head>
+
+<body>
+    
+    <marquee behavior="alternate">
+        <h1 id="b">Welcome Biplab!</h1>
+    </marquee>
+    <div id="box">
+        <center>
+            <h4 id="bie">E BILL CALCULATOR</h4>
+            <b>Enter your Submeter units</b><br><br>
+            <input type="number" name="units" id="sunits" placeholder="Submeter units"><br><br>
+            <b>Enter motor units</b><br><br>
+            <input type="number" name="sunits" id="munits" placeholder="Motor units">
+            <br><br>
+            <input type="submit" value="View your bill" id="ebill" onclick="sunits()">
+        </center>
+    </div>
+    <fieldset id="fset">
+        <legend>YOUR E BILL DETAILS</legend>
+        <div id="abi">
+            <p id="tdi">Tenant Name: Biplab Ghosh<br>
+                Tenant Address:<br> c/o Dinesh Ranjan Ghosh,<br>Ward No.6, near UBI, Ramkrishna Nagar, <br>Karimganj
+                - 788166</p><br><br>
+            <b>Sub meter information</b><br><br>
+            <div id="bi">
+                Current usage:<p id="td"></p><br>
+                    Previous usage:<p id="tdd"></p><br>
+                    Difference in KWH:<p id="tddd"></p>
+            </div><br><br>
+            <b>Motor Sub meter information</b><br><br>
+            <div id="bi">
+                Current usage:<p id="mu"></p><br>
+                    Previous usage:<p id="na"></p><br>
+                    Difference in KWH:<p id="ds"></p>
+            </div><br>
+            <h3>Bill summary</h3>
+            <div id="bs">
+                Previous total units(kWh):<p id="lm" ></p><br>
+                    Current total units(kWh):<p id="ctu"></p><br>
+
+                    Meter rent:<p id="rm"></p><br>
+                    Rate per unit: Rs 7.61<br>
+                    Total Amount:<p id="amt"></p><br>
+                    Due date:<p id="dd"></p></p><br>
+                <br>
+                <b id="yt">Your total payable amount for Ebill is:<p id="rs"></p><br>
+                    Please pay your bills on time to avoid penalty</b>
+                <hr>
+                <p id="tde">Note: The bill is computed based on your electric submeter, motor units, and rates. Charges
+                    align with the landlord's information and expenses. It is unique to your total e-bill calculation
+                    and cannot be compared with other financial details.</p><br><br>
+                    <button id="bbe" onclick="e()">BACK TO E BILL CALCULATOR</button>
+            </div>
+        </div>
+    </fieldset>
+</body>
+
+</html>
